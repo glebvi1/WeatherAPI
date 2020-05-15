@@ -2,6 +2,7 @@ package com.example.weatherapi;
 
 import android.os.AsyncTask;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -22,7 +23,7 @@ public class Weather extends AsyncTask<String, Void, String> {
             connection.connect();
 
             InputStream inputStream = connection.getInputStream();
-            InputStreamReader reader = new InputStreamReader(inputStream);
+            BufferedInputStream reader = new BufferedInputStream(inputStream);
 
             int data = reader.read();
             char symbol;
